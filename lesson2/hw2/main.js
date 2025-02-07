@@ -129,37 +129,44 @@ console.log(users[9].password)
 // ------------------------------------------------------
 
 let temperature = [
-    day1 = {
+   {
+        day:'sunday',
         morning: 12,
         afternoon: 21,
         night: 5,
     },
-    day2 = {
+   {
+       day:'Monday',
         morning: 11,
         afternoon: 20,
         night: 7,
     },
-    day3 = {
+   {
+       day:'Tuesday',
         morning: 15,
         afternoon: 26,
         night: 19,
     },
-    day4 = {
+    {
+        day: 'Wednesday',
         morning: 18,
         afternoon: 27,
         night: 10,
     },
-    day5 = {
+    {
+        day:'Thursday',
         morning: 16,
         afternoon: 25,
         night: 10,
     },
-    day6 = {
+    {
+        day: 'Friday',
         morning: 20,
         afternoon: 27,
         night: 12,
     },
-    day7 = {
+    {
+        day: 'Saturday',
         morning: 18,
         afternoon: 27,
         night: 11,
