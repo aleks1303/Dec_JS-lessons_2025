@@ -41,7 +41,7 @@
 //     #awLXL6TBzg
 //     - з файлу arrays.js (лежить в папці 2023 plan ) взяти масив coursesAndDurationArray. За допомоги іф перевірити кожен його елемент на тривалість навчання. У випадку якщо тривалість довша за 5 місяців вивести в консоль "Супер".
 
-
+ 'use strict'
 let arr = [11, 23, 45, 'some', 'else some', true, false, 'else any things', 567, -43]
 
 console.log(arr[0], arr[1], arr[2], arr[3], arr[4], arr[5], arr[6], arr[7], arr[8], arr[9]);
@@ -129,20 +129,20 @@ console.log(users[9].password)
 // ------------------------------------------------------
 
 let temperature = [
-   {
-        day:'sunday',
+    {
+        day:'Sunday',
         morning: 12,
         afternoon: 21,
         night: 5,
     },
-   {
-       day:'Monday',
+    {
+        day: 'Monday',
         morning: 11,
         afternoon: 20,
         night: 7,
     },
-   {
-       day:'Tuesday',
+    {
+        day: 'Tuesday',
         morning: 15,
         afternoon: 26,
         night: 19,
@@ -160,13 +160,13 @@ let temperature = [
         night: 10,
     },
     {
-        day: 'Friday',
+        day:'Friday',
         morning: 20,
         afternoon: 27,
         night: 12,
     },
     {
-        day: 'Saturday',
+        day:'Saturday',
         morning: 18,
         afternoon: 27,
         night: 11,
