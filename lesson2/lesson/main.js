@@ -224,8 +224,6 @@ let access = obj.age >= 18 ? 'Yes' : 'No';
 console.log(access)
 
 
-
-
 // Світлофор
 // let red = document.getElementById('red');
 // let yellow = document.getElementById('yellow');
@@ -236,6 +234,7 @@ console.log(access)
 // let clickYellow = yellow.onclick = function () {body.style.background = 'yellow'}
 // let clickGreen = green.onclick = function () { body.style.background = 'green'}
 // if (clickRed) {
+//
 // }else if (clickYellow) {
 //
 // }else if (clickGreen) {
