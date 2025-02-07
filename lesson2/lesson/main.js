@@ -219,9 +219,9 @@ let obj = {
 // }
 // console.log(access)
 
-let access = obj.age >= 18 ? 'Yes' : 'No';
-
-console.log(access)
+// let access = obj.age >= 18 ? 'Yes' : 'No';
+//
+// console.log(access)
 
 
 // Світлофор
