@@ -258,13 +258,13 @@ switch (dayOfWeek) {
 //         Також потрібно врахувати коли введені рівні числа.
 //
 
-let user = [3, 11]
-if (user[0] > user[1]) {
-    console.log(user[0])
-} else if (user[0] < user[1]) {
-    console.log(user[1])
-} else if ( user[0] === user[1]) {
-    console.log(user[0], user[1])
+let num = [3, 11]
+if (num[0] > num[1]) {
+    console.log(num[0])
+} else if (num[0] < num[1]) {
+    console.log(num[1])
+} else if ( num[0] === num[1]) {
+    console.log(num[0], num[1])
 } else {
     console.log('wrong number')
 }
