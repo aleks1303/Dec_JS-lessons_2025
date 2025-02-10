@@ -191,11 +191,13 @@ for (const user of users) {
         console.log(user)
         }
 }
+console.log('')
 for (const user of users) {
     if (user.status === false) {
         console.log(user)
     }
 }
+console.log('')
 for (const user of users) {
     if (user.age > 30) {
         console.log(user)
