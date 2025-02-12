@@ -79,18 +79,106 @@ list1('some words else', 8)
 
 // #gEFoxMMO
 // - створити функцію яка приймає масив примітивних елементів (числа,стрінги,булеві), та будує для них список (ul li) та виводить його через document.write
+let array = [11, 'some', 'any', 34, 546, true]
 
-
+function arrItems (items) {
+    document.write(`<ul>`)
+    for (const item of items) {
+        document.write(`<li>${item}</li>`)
+    }
+    document.write(`</ul>`)
+}
+arrItems(array)
 
 // #bovDJDTIjt
 // - створити функцію яка приймає масив об'єктів з наступними полями id,name,age , та виводить їх в документ. Для кожного об'єкту окремий блок.
+
+let usersArray = [
+    {id: 1, name: 'vasya', age: 31},
+    {id: 2, name: 'petya', age: 30},
+    {id: 3, name: 'kolya', age: 29},
+    {id: 4, name: 'olya', age: 28},
+    {id: 5, name: 'max', age: 30},
+    {id: 6, name: 'anya', age: 31,},
+    {id: 7, name: 'oleg', age: 28},
+    {id: 8, name: 'andrey', age: 29},
+    {id: 9, name: 'masha', age: 30},
+    {id: 10, name: 'olya', age: 31},
+    {id: 11, name: 'max', age: 31}
+];
+function arrObj (usersArray) {
+    for (const item of usersArray) {
+        document.write(`<div>
+         <h4>Id: ${item.id}</h4>
+         <h3>Name: ${item.name}</h3>
+         <h3>age: ${item.age}</h3>
+         <br>
+</div>`)
+    }
+}
+arrObj(usersArray)
 //     #pghbnSB
 // - створити функцію яка повертає найменьше число з масиву
+
+let arrNum = [6, 33, 4534, 3, 34, 21, 25, 3, -1 ]
+
+function countMin (arrNum) {
+    let minNum = arrNum[0];
+    for (let i = 1; i < arrNum.length; i++) {
+        let number = arrNum[i]
+        if(number < minNum) {
+          minNum = number
+        }
+    }
+    console.log(minNum)
+}
+countMin(arrNum)
+
+
 // #EKRNVPM
 // - створити функцію sum(arr) яка приймає масив чисел, сумує значення елементів масиву та повертає його. Приклад sum([1,2,10]) //->13
+
+let num = [10, 10, 33, 44, 55, 66, 77]
+function sum (num) {
+    let sum = num[0];
+    for (let i = 1; i < num.length; i++ ) {
+        sum = sum + num[i]
+    }
+    console.log(sum) // 295
+}
+sum(num)
+
 // #kpsbSQCt2Lf
 // - створити функцію swap(arr,index1,index2). Функція міняє місцями заняення у відповідних індексах
+
+function swap (arr, index1, index2) {
+    let num = arr[index1];
+    arr[index1] = arr[index2];
+    arr[index2] = num
+    return arr
+    }
+
+console.log(swap([11, 22, 33, 55, 44], 3, 1))
+
 // Приклад  swap([11,22,33,44],0,1) //=> [22,11,33,44]
+
+
 // #mkGDenYnNjn
 // - Написати функцію обміну валюти exchange(sumUAH,currencyValues,exchangeCurrency)
 // Приклад exchange(10000,[{currency:'USD',value:25},{currency:'EUR',value:42}],'USD') // => 400
+
+let exchangeSum = [
+    {currency:'USD',value:41},
+    {currency:'EUR',value:44}
+]
+function exchange( sumUAH, currencyValues,exchangeCurrency) {
+    let currencyItem;
+    for (const item of currencyValues) {
+        if (item.currency === exchangeCurrency) {
+            currencyItem = item;
+        }
+    }
+    return sumUAH / currencyItem.value
+
+}
+console.log(exchange(10000, exchangeSum, 'USD'));
