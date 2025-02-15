@@ -140,35 +140,65 @@ console.log(mapObj)
 //         value: '', // '6'-'10', 'ace','jack','queen','king'
 //     color:'', // 'red','black'
 // }
-// const suits = [
-//     { name: "spade", color: "black" },   // ♠ Піки (чорні)
-//     { name: "clubs", color: "black" },   // ♣ Трефи (чорні)
-//     { name: "diamond", color: "red" },   // ♦ Бубни (червоні)
-//     { name: "heart", color: "red" }      // ♥ Черви (червоні)
-// ];
-//
-// const values = ["6", "7", "8", "9", "10", "jack", "queen", "king", "ace"];
+
 
 
 const cardSuit = ['spade', 'diamond','heart', 'clubs'];
 const values = ['6', '7', '8', '9', '10', 'jack','queen','king', 'ace'];
-const colors = ['red', 'black'];
+
 
 const cards = []
 for (const suit of cardSuit) {
     for (const value of values) {
-        let card = cards.push({cardSuit: suit, value: value});
+        let card = {cardSuit: suit, value: value};
         if (suit === 'spade' || suit === 'clubs') {
-            card.color = 'red';
-        } else {
             card.color = 'black';
+        } else {
+            card.color = 'red';
         }cards.push(card)
     }
 }
 console.log(cards)
 
+const suits = [
+    { name: "spade", color: "black" },   // ♠ Піки (чорні)
+    { name: "clubs", color: "black" },   // ♣ Трефи (чорні)
+    { name: "diamond", color: "red" },   // ♦ Бубни (червоні)
+    { name: "heart", color: "red" }      // ♥ Черви (червоні)
+];
 
 
+// - знайти піковий туз
+const ace = cards.find(value => {
+    if (value.cardSuit === 'spade' && value.value === 'ace') {
+       return value
+    }
+});
+console.log(ace)
+
+
+// - всі шістки
+const cardSix = cards.filter(value => value.value === '6');
+console.log(cardSix)
+
+// - всі червоні карти
+const cardsRed = cards.filter(value => value.color === 'red');
+console.log(cardsRed);
+
+
+// - всі буби
+const cardsDiamond = cards.filter(value => value.cardSuit === 'diamond');
+console.log(cardsDiamond)
+
+// - всі трефи від 9 та більше
+const cardClubs = cards.filter(value => {
+    if (value.cardSuit === 'clubs' && (value.value === '9' || value.value === '10' ||
+        value.value === 'jack' || value.value === 'queen' || value.value === 'king' || value.value === 'ace')) {
+       return value
+    }
+});
+
+console.log(cardClubs)
 // =========================
 //
 //
@@ -180,8 +210,97 @@ console.log(cards)
 //     hearts:[],
 //     clubs:[]
 // }
+
+const reduceCards = cards.reduce((acc, suit) => {
+    switch (suit.cardSuit){
+        case 'clubs':
+            acc.clubs.push(suit);
+            break;
+        case 'spade':
+            acc.spades.push(suit);
+            break;
+        case 'diamond':
+            acc.diamonds.push(suit);
+            break;
+        case 'heart':
+            acc.hearts.push(suit);
+            break;
+    }
+return acc
+}, { clubs: [], spades: [], diamonds: [], hearts: [], })
+console.log(reduceCards)
+
+
 // =========================
 // #4LJn7zBx
 // взяти з arrays.js масив coursesArray
 // --написати пошук всіх об'єктів, в яких в modules є sass
 // --написати пошук всіх об'єктів, в яких в modules є docker
+let coursesArray = [
+    {
+        title: 'JavaScript Complex',
+        monthDuration: 5,
+        hourDuration: 909,
+        modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'react', 'angular', 'aws', 'docker', 'git', 'node.js']
+    },
+    {
+        title: 'Java Complex',
+        monthDuration: 6,
+        hourDuration: 909,
+        modules: ['html',
+            'css',
+            'js',
+            'mysql',
+            'mongodb',
+            'angular',
+            'aws',
+            'docker',
+            'git',
+            'java core',
+            'java advanced']
+    },{
+        title: 'Python Complex',
+        monthDuration: 6,
+        hourDuration: 909,
+        modules: ['html',
+            'css',
+            'js',
+            'mysql',
+            'mongodb',
+            'angular',
+            'aws',
+            'docker',
+            'python core',
+            'python advanced']
+    },
+    {
+        title: 'QA Complex',
+        monthDuration: 4,
+        hourDuration: 909,
+        modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'git', 'QA/QC']
+    }, {
+        title: 'FullStack',
+        monthDuration: 7,
+        hourDuration: 909,
+        modules: ['html',
+            'css',
+            'js',
+            'mysql',
+            'mongodb',
+            'react',
+            'angular',
+            'aws',
+            'docker',
+            'git',
+            'node.js',
+            'python',
+            'java']
+    },
+    {
+        title: 'Frontend',
+        monthDuration: 4,
+        hourDuration: 909,
+        modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'react', 'angular', 'aws', 'docker', 'git', 'sass']
+    }
+];
+
