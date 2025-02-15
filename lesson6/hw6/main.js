@@ -126,9 +126,8 @@ console.log(mapObj)
 // =========================
 //     #bolvdlhP
 
-let cards = [
 
-]
+
 // описати колоду карт (від 6 до туза без джокерів)
 // - знайти піковий туз
 // - всі шістки
@@ -141,7 +140,35 @@ let cards = [
 //         value: '', // '6'-'10', 'ace','jack','queen','king'
 //     color:'', // 'red','black'
 // }
+// const suits = [
+//     { name: "spade", color: "black" },   // ♠ Піки (чорні)
+//     { name: "clubs", color: "black" },   // ♣ Трефи (чорні)
+//     { name: "diamond", color: "red" },   // ♦ Бубни (червоні)
+//     { name: "heart", color: "red" }      // ♥ Черви (червоні)
+// ];
 //
+// const values = ["6", "7", "8", "9", "10", "jack", "queen", "king", "ace"];
+
+
+const cardSuit = ['spade', 'diamond','heart', 'clubs'];
+const values = ['6', '7', '8', '9', '10', 'jack','queen','king', 'ace'];
+const colors = ['red', 'black'];
+
+const cards = []
+for (const suit of cardSuit) {
+    for (const value of values) {
+        let card = cards.push({cardSuit: suit, value: value});
+        if (suit === 'spade' || suit === 'clubs') {
+            card.color = 'red';
+        } else {
+            card.color = 'black';
+        }cards.push(card)
+    }
+}
+console.log(cards)
+
+
+
 // =========================
 //
 //
