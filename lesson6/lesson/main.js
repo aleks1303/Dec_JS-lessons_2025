@@ -266,5 +266,95 @@
 // ----------------------------
 
 // Callback функції
+//
+// Callback-функція – це функція, яка передається як аргумент в іншу функцію і викликається пізніше.
+// Вона дозволяє керувати порядком виконання коду, що особливо корисно в асинхронних операціях.
+//
+// Callback – це функція, передана як аргумент іншій функції.
+//  Використовується для ітерації (forEach()), обчислень (calculate()), асинхронного коду (setTimeout(), fetch).
+//  У складних випадках краще використовувати Promise або async/await.
+//
+//  Callback-функції – основа асинхронного програмування в JavaScript!
+//
+// function foo (bar) {
+//     console.log(bar)
+// }
+// foo(100)
+//
+// function foo (bar) {
+//     console.log(bar)
+// }
+// foo(function () {
+//     return 100
+// } ());
+//
+// викликаємо функцію foo в console 'bar()'
+// в цей момент функція називається callback,
+// коли змінюється акцент функції в середину іншої функції
+//
+// function foo (bar) {
+//     console.log(bar())
+// }
+// // не викликаємо функцію
+// // тоді вона передає опис функції
+// foo(function () {
+//     return 100
+// } );
+//
+// // якщо використовувати в calc буде купа коду з всіма можливими умовами
+// // тому використовують callback
+//
+// function calc (a, b , callback) {
+// return  callback(a,b);
+// }
+// let plus =calc(10, 30 , (a, b) => {return a + b});
+// let minus =calc(10, 30 , (a, b) => {return a - b});
+// let multi =calc(10, 30 , (a, b) => {return a * b});
+// let ch =calc(10, 30 , (a, b) => {return a / b});
+//
+// console.log(plus, minus, multi, ch)
+
+//--------------------------------
+
+//Callback додаткове пояснення
+//
+// функція фільтр з callback
+//
+let users = [
+    {name: 'vasya', age: 31, status: false},
+    {name: 'petya', age: 30, status: true},
+    {name: 'kolya', age: 29, status: true},
+    {name: 'olya', age: 28, status: false},
+    {name: 'max', age: 30, status: true},
+    {name: 'anya', age: 31, status: false},
+    {name: 'oleg', age: 28, status: false},
+    {name: 'andrey', age: 29, status: true},
+    {name: 'masha', age: 30, status: true},
+    {name: 'olya', age: 31, status: false},
+    {name: 'max', age: 31, status: true}
+];
+
+
+function filter (arr, callback) {
+    let mass = []
+    for (const item of arr) {
+        if (callback(item)){
+            mass.push(item)
+        }
+    } return mass
+}
+
+console.log(filter([11, 22, 33, 44, 55, 66, 77, 88], (item) => {
+    return item%2 === 0
+}));
+
+let userAge =filter(users, (user) => {
+    return user.age >= 30
+});
+console.log(userAge)
+
+
+
+// ще приклад
 
 
