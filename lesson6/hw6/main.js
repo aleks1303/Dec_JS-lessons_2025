@@ -72,7 +72,7 @@ console.log(mapStr)
 // sortNums(nums,'descending') // [21,11,3]
 
 let nums = [11,21,3];
-function sortNums(array, direction) {
+function sortNums(array) {
   return  array.sort((a, b) =>  a - b )
 }
 console.log(sortNums(nums));
