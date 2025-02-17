@@ -29,13 +29,13 @@ console.log(str6.toUpperCase());
 // - Перевести до нижнього регістру настипні стрінгові значення
 // 'HELLO WORLD', 'LOREM IPSUM', 'JAVASCRIPT IS COOL'
 let str7 = 'HELLO WORLD';
-console.log(str4.toLowerCase());
+console.log(str7.toLowerCase());
 
 let str8 = 'LOREM IPSUM';
-console.log(str5.toLowerCase());
+console.log(str8.toLowerCase());
 
 let str9 = 'JAVASCRIPT IS COOL';
-console.log(str6.toLowerCase());
+console.log(str9.toLowerCase());
 
 
 // #0b89BkYZwu
@@ -75,7 +75,7 @@ let nums = [11,21,3];
 function sortNums(array, direction) {
   return  array.sort((a, b) =>  a - b )
 }
-console.log(sortNums(nums),);
+console.log(sortNums(nums));
 
 // ==========================
 //
@@ -160,13 +160,6 @@ for (const suit of cardSuit) {
 }
 console.log(cards)
 
-const suits = [
-    { name: "spade", color: "black" },   // ♠ Піки (чорні)
-    { name: "clubs", color: "black" },   // ♣ Трефи (чорні)
-    { name: "diamond", color: "red" },   // ♦ Бубни (червоні)
-    { name: "heart", color: "red" }      // ♥ Черви (червоні)
-];
-
 
 // - знайти піковий туз
 const ace = cards.find(value => {
@@ -197,6 +190,8 @@ const cardClubs = cards.filter(value => {
        return value
     }
 });
+
+// console.log(cardClubs.filter(card => card.cardSuit === 'clubs' && ['9', '10', 'jack', 'queen', 'king', 'ace'].includes(card.value)));
 
 console.log(cardClubs)
 // =========================
@@ -229,6 +224,8 @@ const reduceCards = cards.reduce((acc, suit) => {
 return acc
 }, { clubs: [], spades: [], diamonds: [], hearts: [], })
 console.log(reduceCards)
+
+
 
 
 // =========================
@@ -304,3 +301,13 @@ let coursesArray = [
     }
 ];
 
+let findSass = coursesArray.filter(value => {
+  return value.modules.includes('sass')
+})
+console.log(findSass);
+
+
+let findDocker = coursesArray.filter(value => {
+    return value.modules.includes('docker')
+})
+console.log(findDocker);
