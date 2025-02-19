@@ -122,8 +122,220 @@
 // -----------------------------
 
 // Класи та наслідування
+//
+// class User {
+//     constructor(name, age) {
+//         this.name = name;
+//         this.age = age;
+//     }
+//     greeting () {
+//         return `Hello my name is ${this.name}`;
+//     }
+// }
+// let user = new User('max', 34);
+// console.log(user.name);
+// console.log(user.age);
+// console.log(user.greeting());
+//
+//
+// // створити класи, за допомогою command N
+// // в класі прописуємо поля які необхідні викликаємо command N
+// // і в конструкторі вибираємо поля
+//
+// class User1{
+//
+//     constructor(name, age, status) {
+//         this.name = name;
+//         this.age = age;
+//         this.status = status;
+//     }
+//   work (){
+//     return `hello my name is process`
+//  }
+// }
+// const user4 = new User1('Some', 24, true)
+// console.log(user4)
+// console.log(user4.work());
+// // static - викликається без присвоєння класу змінної,
+// // але this не працює в цьому контексті, тільки функція, яку викликаємо
+//
+// // У класах static використовується для методів та властивостей, які не залежать
+// // від конкретного екземпляра об'єкта.
+// class User2 {
+//     static count = 0
+//
+//     constructor(name, age, status) {
+//         this.name = name;
+//         this.age = age;
+//         this.status = status;
+//         User2.count++;
+//     }
+//     static getCount () {
+//        return  User2.count;
+//     }
+// }
+// let user1 = new User2('alex')
+// let user2 = new User2('alex')
+// let user3 = new User2('alex')
+//
+// console.log(User2.getCount()); // підрахувало 3 виклики
+//
+// // static - використовується для глобальних методів та властивостей класу.
+// // Не можна викликати через об'єкт, тільки через сам клас.
+// // Корисно для утілитних функцій, констант, підрахунку екземплярів.
+//
+//
+// // Наслідування
+// // extends
+//
+// class Work extends User1{
+//
+//
+//     constructor(name, age, status, password) {
+//         super(name, age, status);
+//         this.password = password;
+//     }
+//
+//     // викликаємо інформацію з іншого класу або впроваджуємо свою
+//     // super.work()
+//     work() {
+//        return `hello and my name is work`;
+//     }
+// }
+// let work = new Work('Some', 35, true, 343334)
+// console.log(work)
+// console.log(work.work()); //  можна викликати тут
+//
+//
+// // наслідування без конструктора
+//
+// function Foo ( name, age) {
+//     this.name = name;
+//     this.age = age;
+// }
+// function Bar (name, age, password) {
+//    Foo.apply(this, arguments)
+//     this.password = password
+// }
+//
+// let bar = new Bar('some', 23, 34)
+// console.log(bar)
 
+//------------------------------
 
+// Дата
+// об'єкт який зберігає інформацію про якусь певну дату (минулого чи майбутнього)
+// маніпулювати датами програмно
+//
+// let now = new Date()
+// console.log(now) // поточна дата
+//
+// console.log(now.getFullYear()) // 2025
+// console.log(now.getMonth()) // 1 - починається з 0
+// console.log(now.getDay()) // день тижня
+// console.log(now.getHours())
+// console.log(now.getMinutes())
+// console.log(now.getSeconds())
+// console.log(now.getMilliseconds())
+// console.log(now.getTime()) // мілісекунди від 1 січня 1970 року (системи юінкс)
+//
+//
+// // визначити дату
+// let data1 = new Date(1740000000000)
+// console.log(data1)
+//
+// let data2 = new Date("June 10 1990 04:25:34");
+// console.log(data2)
+//
+// let data3 = new Date(2011, 0, 1, 20, 34, 45,55);
+// console.log(data3)
+//
+// // встановити дату
+// data3.setDate(31)
+// console.log(data3)
+//
+// // можна перевіряти чи повнолітня людина, чи ні!
+// let user = {
+//     id:1,
+//     name: 'max',
+//     bday: new Date(1740000000000)
+// }
+// console.log(user)
 
+//-------------------------------
 
+// Set
+//унікальний набір, значення не повторюються
+// передаються тільки унікальні значення
+//
+// let set = new Set()
+// set.add('asd')
+// set.add('ddd')
+// set.add(1)
+// set.add(2)
+// console.log(set)
+//
+// // чи існує об'єкт
+// console.log(set.has(1)); // true
+//
+// console.log(set.delete('asd'));
+// console.log(set) // вже не існує
+//
+// console.log(set.size) //3
+//
+// // ітерування
+// set.forEach(value => console.log(value))
+//
+// //перетворити на масив
+//
+// let setArray = Array.from(set)
+// console.log(setArray)
+//
+// // перетворення об'єкта з однаковими значеннями на масив з унікальними
+//
+// let num = new Set([11, 22, 33, 44, 11, 22, 33, 44, 55])
+// console.log(num)
+// let numberArray = Array.from(num)
+// console.log(numberArray)
+
+// ------------------------------
+
+// Map
+//
+// mapping - асоціація
+//
+// let map = new Map();
+// console.log(map) // map{}
+// map.set(1, 'one')
+// map.set(2, 'two')
+// map.set(3, 'three')
+// console.log(map) // {map {1: 'one', 2: 'two', 3: 'three'}
+//
+//
+// // це приклад асоціацій з об'єктами
+// let names = new Map()
+// names.set('salt', {name: 'max', surname: 'saltov'})
+// names.set('sugar', {name: 'alex', surname: 'sladkiy'})
+//
+// console.log(names.get('salt'))
+//
+//
+// //шукати по посиланню на об'єкт
+// let zam = {id: 'zam'};
+//     map.set(zam, {name: 'pavel', surname: 'zamokov'});
+// console.log(map.get(zam))
+//
+// // ключі в мар унікальні
+//
+// // видалити map.delete()
+// // почистити - map.clear()
+// // розмір - map.size()
+//
+// // будуємо масив з об'єктами
+// // витягуємо ключи
+// let from = Array.from(names.keys());
+// console.log(from)
+//
+// //витягуємо значення
+// console.log(Array.from(names.values()))
 
