@@ -228,6 +228,7 @@
 // маніпулювати датами програмно
 //
 // let now = new Date()
+
 // console.log(now) // поточна дата
 //
 // console.log(now.getFullYear()) // 2025

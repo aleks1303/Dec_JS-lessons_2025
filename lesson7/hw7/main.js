@@ -55,8 +55,21 @@ console.log(userSort);
 // #nkMXISv
 // - створити конструктор для об'єктів Client з полями id, name, surname , email, phone, order (поле є масивом зі списком товарів)
 // створити пустий масив, наповнити його 10 об'єктами Client
-//
-//
+
+class Client {
+
+    constructor(id, name, surname, email, phone, order) {
+        this.id = id;
+        this.name = name;
+        this.surname = surname;
+        this.email = email;
+        this.phone = phone;
+        this.order = order;
+    }
+}
+
+const client = new Client(1, 'Max', 'Maxim', 'max@.ua', '+38098000000')
+console.log(client)
 // #8abtVjRv
 // - Взяти масив (Client [] з попереднього завдання).Відсортувати його по кількості товарів в полі order по зростанню. (sort)
 //
@@ -91,3 +104,7 @@ console.log(userSort);
 //
 // #gsKLAsNWM
 // *Через Array.prototype. створити власний foreach, filter
+
+
+let time = new Date()
+console.log(time)
