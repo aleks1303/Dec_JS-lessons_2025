@@ -42,13 +42,14 @@ console.log(filterUser);
 // - Взяти масив з User[] з попереднього завдання, та відсортувати його по id. по зростанню (sort)
 
 const userSort = filterUser.sort((a, b) => {
-    if (a.id > b.id) {
-        return 1
-    } else if (a.id < b.id) {
-        return -1
-    } else if (a.id === b.id) {
-        return 0
-    }
+    // if (a.id > b.id) {
+    //     return 1
+    // } else if (a.id < b.id) {
+    //     return -1
+    // } else if (a.id === b.id) {
+    //     return 0
+    // }
+   return  a.id - b.id
 })
 console.log(userSort);
 
@@ -68,11 +69,37 @@ class Client {
     }
 }
 
-const client = new Client(1, 'Max', 'Maxim', 'max@.ua', '+38098000000')
-console.log(client)
+const users = [
+    new Client(1, 'Max', 'Maxim', 'max@.ua', '+38098000000', ['pizza', 'hotdog', 'sushi']),
+    new Client(2, 'Nora', 'Nora', 'max@.ua', '+38098000001', ['pizza', 'hotdog', 'sushi']),
+    new Client(3, 'Lora', 'Lora', 'max@.ua', '+38098000002', ['pizza', 'hotdog', 'sushi']),
+    new Client(4, 'Masha', 'Masha', 'max@.ua', '+38098000003', ['pizza', 'hotdog', 'sushi']),
+    new Client(5, 'Olga', 'Olga', 'max@.ua', '+38098000004', ['pizza', 'hotdog']),
+    new Client(6, 'Oleg', 'Oleg', 'max@.ua', '+38098000005', ['pizza', 'hotdog', 'sushi', 'hat', 'suit']),
+    new Client(7, 'Marina', 'Marina', 'max@.ua', '+38098000006', ['pizza', 'hotdog', 'sushi', 'hat', 'suit', 'boots']),
+    new Client(8, 'Mila', 'Mila', 'max@.ua', '+38098000007', ['pizza', 'hotdog', 'sushi', 'boots']),
+    new Client(9, 'Ivan', 'Ivan', 'max@.ua', '+38098000008', ['pizza', 'hotdog', 'sushi', 'hat', 'pen', 'cola', 'candy']),
+    new Client(10, 'Ivana', 'Ivana', 'max@.ua', '+38098000010', ['pizza', 'hotdog', 'sushi','salt', 'sugar', 'cucumber', 'pineapple', 'apple', 'tomato', 'water'])
+]
+console.log(users)
+
+
+
 // #8abtVjRv
 // - Взяти масив (Client [] з попереднього завдання).Відсортувати його по кількості товарів в полі order по зростанню. (sort)
-//
+
+const sortClients = users.sort((a, b) => {
+ if (a.order.length > b.order.length) {
+     return 1
+ } else if (a.order.length < b.order.length) {
+     return -1
+ } else if (a.order.length === b.order.length) {
+     return 0
+ }
+
+})
+console.log(sortClients)
+
 //
 // #vV9a6584I5
 // - Створити функцію конструктор яка дозволяє створювати об'єкти car, з властивостями модель, виробник, рік випуску, максимальна швидкість, об'єм двигуна. додати в об'єкт функції:
@@ -81,7 +108,20 @@ console.log(client)
 // -- increaseMaxSpeed (newSpeed) - яка підвищує значення максимальної швидкості на значення newSpeed
 // -- changeYear (newValue) - змінює рік випуску на значення newValue
 // -- addDriver (driver) - приймає об'єкт який "водій" з довільним набором полів, і додає його в поточний об'єкт car
-//
+
+class Car {
+    constructor(model, producer, year, maxSpeed, engine) {
+        this.model = model;
+        this.producer = producer;
+        this.year = year;
+        this.maxSpeed = maxSpeed;
+        this.engine = engine;
+    }
+
+}
+
+
+
 //
 // #5kla3yMpgp
 // - (Те саме, тільки через клас)
@@ -105,6 +145,7 @@ console.log(client)
 // #gsKLAsNWM
 // *Через Array.prototype. створити власний foreach, filter
 
-
 let time = new Date()
-console.log(time)
+console.log(time.getTime())
+
+
