@@ -273,3 +273,14 @@ Array.prototype.ownFilter = function (callback) {
 let result = users.ownFilter((user) => user.name === 'olya')
 console.log(result)
 
+
+// Array.prototype.ownEvery = function (callback) {
+//     for (const item of this) {
+//         if (callback(item)){
+//             console.log(item)
+//         }else if (!callback(item)) {
+//             console.log(item)
+//         }
+//     }
+// }
+// users.ownEvery((user) => user.age === 30)
