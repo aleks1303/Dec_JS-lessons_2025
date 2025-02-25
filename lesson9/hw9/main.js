@@ -1,3 +1,5 @@
+
+'use strict'
 // #8Nmt60ZT
 // - створити блок,
 //     - додати йому класи wrap, collapse, alpha, beta
