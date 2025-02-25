@@ -57,7 +57,6 @@ for (const item of coursesAndDurationArray) {
 }
 document.body.appendChild(courses)
 
-
 // =========================
 //     #Kx1xgoKy8
 //     - Є масив
