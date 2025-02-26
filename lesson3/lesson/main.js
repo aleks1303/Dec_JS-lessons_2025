@@ -149,7 +149,7 @@
 //----------------------------------
 
 // Цикл while
-
+//
 // let users = [
 //     {name: 'vasya', age: 31, status: false},
 //     {name: 'petya', age: 30, status: true},
