@@ -30,22 +30,25 @@ button1.onclick = function () {
 
 // #ymAmN2xJ
 // Створити форму з трьома полями для name, surname, age та кнопкою. При натисканні на кнопку зчитати дані з полів, та вивести об'єкт в документ. Іншими словами : заповнили форму, натиснули кнопку, під формою з'явився блок з вашим об'єктом
-// const form = document.getElementById('f2')
-//
-// const infoUser = document.getElementById('info-user')
-// form.onclick = function (ev) {
-//     ev.preventDefault()
-//     let user = {name: this.value, surname: this.value, age: this.age}
-//    localStorage.setItem("user", JSON.stringify(user))
-// }
+const form = document.forms['f2'];
 
+const infoUser = document.getElementById('info-user')
+form.onsubmit = function (ev) {
+    ev.preventDefault()
+    let user = {name: this.name.value, surname: this.surname.value, age: this.age.value}
+    infoUser.innerText = `name: ${user.name} surname: ${user.surname} age: ${user.age} `
+}
 
 
 // #2VaLt4vDczH
-// є сторінка, на якій є блок, я кому знаходиться цифра. написати код, який при кожному перезавантажені сторінки буде додавати до неї +1
-//
+// є сторінка, на якій є блок, в якому знаходиться цифра. написати код, який при кожному перезавантажені сторінки буде додавати до неї +1
+
+
+
+
+
 // #LhSfdhM3
-// Є сторінка index.html (назва довільна), при відвідуванні якої в локальне сховще, в масив sessionsList зберігається інформація про дату та час відвідування сторінки. Є  сторінка sessionsListPage.html (назва довільна), при відвідуванні якої потрібно відмалювати всю інформацію про відвідування сторінки index.html. Інфу НЕ виводити в консоль, а малювати в DOM
+// Є сторінка index.html (назва довільна), при відвідуванні якої в локальне сховище, в масив sessionsList зберігається інформація про дату та час відвідування сторінки. Є  сторінка sessionsListPage.html (назва довільна), при відвідуванні якої потрібно відмалювати всю інформацію про відвідування сторінки index.html. Інфу НЕ виводити в консоль, а малювати в DOM
 //
 //
 //
