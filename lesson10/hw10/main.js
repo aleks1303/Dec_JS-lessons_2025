@@ -111,7 +111,6 @@ addObjectToLS('users', {name: 'Mila', age: 25, status: false})
 addObjectToLS('users', {name: 'Norman', age: 23, status: true})
 addObjectToLS('users', {name: 'Anna', age: 30, status: false})
 
-
 //     #kUSgFqWY
 // Створити 3 inputs та кнопку. Один визначає кількість рядків, другий - кількість комірок, третій вміст комірок.
 //     При натисканні кнопки, вся ця інформація зчитується і формується табличка, з відповідним вмістом.
